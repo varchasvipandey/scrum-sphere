@@ -74,3 +74,14 @@
     @apply bg-background text-foreground;
   }
 }
+
+.anim-fade-in--slow {
+  opacity: 0;
+  animation: fade-in 1s forwards 2s;
+}
+
+@keyframes fade-in {
+  to {
+    opacity: 1;
+  }
+}

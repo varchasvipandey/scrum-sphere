@@ -17,11 +17,8 @@ export default function Home() {
       </div>
 
       <div className="flex space-x-2">
-        <Button variant="secondary" asChild>
-          <Link href={Routes.signIn}>Sign in</Link>
-        </Button>
         <Button asChild>
-          <Link href={Routes.signUp}>Get Started for Free!</Link>
+          <Link href={Routes.signIn}>Get Started</Link>
         </Button>
       </div>
     </main>

@@ -1,13 +1,8 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
+import { globalFont } from "@/lib/fonts";
+import { siteMeta } from "@/meta";
 
-const inter = Inter({ subsets: ["latin"] });
-
-export const metadata: Metadata = {
-  title: "Scrum Sphere",
-  description: "",
-};
+export const metadata = siteMeta;
 
 export default function RootLayout({
   children,
@@ -16,7 +11,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={globalFont.className}>{children}</body>
     </html>
   );
 }

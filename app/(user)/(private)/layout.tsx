@@ -1,10 +1,10 @@
 import { AuthHeader } from "./_components";
 
-export default function UserDashboardLayout({ children }: { children: React.ReactNode }) {
+export default function PrivateAuthorizedLayout({ children }: { children: React.ReactNode }) {
   return (
     <>
       <AuthHeader />
-      <main>{children}</main>
+      {children}
     </>
   );
 }

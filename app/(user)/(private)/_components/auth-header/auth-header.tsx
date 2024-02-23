@@ -6,7 +6,7 @@ export const AuthHeader = () => {
   return (
     <>
       <ActiveOrgHandler />
-      <header className="flex justify-between items-center px-2 h-16 shadow-sm anim-fade-in--slow">
+      <header className="flex justify-between items-center px-4 h-16 shadow-sm anim-fade-in--slow">
         <OrganizationSwitcher
           hidePersonal
           afterSelectOrganizationUrl={`${Routes.dashboard}/:id`}

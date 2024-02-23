@@ -75,6 +75,11 @@
   }
 }
 
+.anim-fade-in {
+  opacity: 0;
+  animation: fade-in 0.2s forwards;
+}
+
 .anim-fade-in--slow {
   opacity: 0;
   animation: fade-in 1s forwards 2s;

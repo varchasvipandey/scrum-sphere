@@ -1,4 +1,4 @@
-import { Settings, CreditCard, Circle, Layout, GitGraph } from "lucide-react";
+import { Settings, CreditCard, Circle, Layout, GitGraph, Menu } from "lucide-react";
 
 const icons = {
   settings: Settings,
@@ -6,6 +6,7 @@ const icons = {
   circle: Circle,
   board: Layout,
   analytics: GitGraph,
+  menu: Menu,
 };
 
 type Icon = keyof typeof icons;

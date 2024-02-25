@@ -14,7 +14,11 @@ const SettingsIcon = getIcon("settings");
 const BillingIcon = getIcon("billing");
 const IsActiveIcon = getIcon("circle");
 
-export const SideNav = () => {
+interface Props {
+  onItemClick?: () => void;
+}
+
+export const SideNav = ({ onItemClick }: Props) => {
   const pathname = usePathname();
   const router = useRouter();
   const { organization } = useOrganization();
@@ -23,7 +27,10 @@ export const SideNav = () => {
 
   const navItems = orgId ? getNavRoutes(orgId) : [];
 
-  const handleOnClickItem = (href: string) => router.push(href);
+  const handleOnClickItem = (href: string) => {
+    router.push(href);
+    if (onItemClick) onItemClick();
+  };
 
   return (
     <div className="flex flex-col space-y-2 items-start">

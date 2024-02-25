@@ -1,6 +1,6 @@
 "use client";
 
-import { SideNav } from "./_components";
+import { SideNav } from "../_components";
 
 export default function DashboardLayout({ children }: { children: React.ReactNode }) {
   return (

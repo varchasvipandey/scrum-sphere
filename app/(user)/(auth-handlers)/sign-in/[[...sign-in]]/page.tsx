@@ -1,11 +1,15 @@
-import { Routes } from "@/lib/routes";
-import { SignIn, auth } from "@clerk/nextjs";
-import { RedirectType, redirect } from "next/navigation";
+import { SignIn } from "@clerk/nextjs";
 
 export default function SignInPage() {
-  const { userId } = auth();
-
-  // if (userId) redirect(Routes.selectOrg, RedirectType.replace);
-
-  return <SignIn />;
+  return (
+    <SignIn
+      appearance={{
+        elements: {
+          footer: {
+            display: "none",
+          },
+        },
+      }}
+    />
+  );
 }

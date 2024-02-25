@@ -33,7 +33,7 @@ export const SideNav = () => {
             key={item.href}
             variant="nav"
             onClick={() => handleOnClickItem(item.href || "")}
-            className={cn("w-full justify-start", pathname === item.href && "bg-primary/20")}
+            className={cn("w-full justify-start", pathname === item.href && "bg-primary/10 text-primary font-normal")}
             aria-label={item.label}
           >
             <span className="w-full flex items-center justify-between">

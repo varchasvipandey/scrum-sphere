@@ -8,7 +8,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
       <aside className="p-4 w-[16rem] hidden lg:block">
         <SideNav />
       </aside>
-      <div className="p-4">{children}</div>
+      <div className="flex-1 p-4">{children}</div>
     </main>
   );
 }

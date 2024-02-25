@@ -6,7 +6,7 @@ import { Separator } from "@/components/ui/separator";
 import { cn } from "@/lib/utils";
 import { useOrganization } from "@clerk/nextjs";
 import { usePathname, useRouter } from "next/navigation";
-import { getNavRoutes } from "./utils/nav-routes";
+import { getNavRoutes } from "./_utils/nav-routes";
 import { SideNavSkeleton } from "./side-nav-skeleton";
 
 const IsActiveIcon = getIcon("circle");

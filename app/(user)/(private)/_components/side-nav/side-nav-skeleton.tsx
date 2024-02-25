@@ -1,5 +1,5 @@
 import { Skeleton } from "@/components/ui/skeleton";
-import { getNavRoutes } from "./utils/nav-routes";
+import { getNavRoutes } from "./_utils/nav-routes";
 import { useDelayedAppearance } from "@/lib/hooks/useDelayedAppearance";
 
 const navItems = getNavRoutes("");

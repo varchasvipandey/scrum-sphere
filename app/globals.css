@@ -75,6 +75,11 @@
   }
 }
 
+
+.cl-internal-b3fm6y {
+  display: none
+}
+
 .anim-fade-in {
   opacity: 0;
   animation: fade-in 0.2s forwards;

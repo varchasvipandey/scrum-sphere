@@ -3,16 +3,12 @@
 import { getIcon } from "@/components/icons";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
-import { Skeleton } from "@/components/ui/skeleton";
-import { Routes, getOrgRoute } from "@/lib/routes";
 import { cn } from "@/lib/utils";
 import { useOrganization } from "@clerk/nextjs";
 import { usePathname, useRouter } from "next/navigation";
+import { getNavRoutes } from "./utils/nav-routes";
+import { SideNavSkeleton } from "./side-nav-skeleton";
 
-const BoardIcon = getIcon("board");
-const AnalyticsIcon = getIcon("analytics");
-const SettingsIcon = getIcon("settings");
-const BillingIcon = getIcon("billing");
 const IsActiveIcon = getIcon("circle");
 
 export const SideNav = () => {
@@ -26,10 +22,10 @@ export const SideNav = () => {
 
   const handleOnClickItem = (href: string) => router.push(href);
 
-  return (
-    <div className={cn("flex flex-col items-start", isLoaded ? "space-y-2" : "space-y-4")}>
-      {!isLoaded && Array.from({ length: navItems.length - 1 }).map((_, i) => <Skeleton key={i} className="h-10 w-full bg-primary/10" />)}
+  if (!isLoaded) return <SideNavSkeleton />;
 
+  return (
+    <div className="flex flex-col items-start space-y-2 anim-fade-in">
       {isLoaded &&
         navItems.map((item) =>
           item.type === "route" ? (
@@ -54,39 +50,4 @@ export const SideNav = () => {
         )}
     </div>
   );
-};
-
-const iconProps = { size: 20, className: "mr-2" };
-
-const getNavRoutes = (orgId: string) => {
-  return [
-    {
-      type: "route",
-      label: "Boards",
-      href: getOrgRoute(orgId, Routes.orgBoards),
-      icon: <BoardIcon {...iconProps} />,
-    },
-    {
-      type: "route",
-      label: "Analytics",
-      href: getOrgRoute(orgId, Routes.orgAnalytics),
-      icon: <AnalyticsIcon {...iconProps} />,
-    },
-    {
-      type: "divider",
-      id: 0,
-    },
-    {
-      type: "route",
-      label: "Settings",
-      href: getOrgRoute(orgId, Routes.orgSettings),
-      icon: <SettingsIcon {...iconProps} />,
-    },
-    {
-      type: "route",
-      label: "Billing",
-      href: getOrgRoute(orgId, Routes.orgBilling),
-      icon: <BillingIcon {...iconProps} />,
-    },
-  ];
 };

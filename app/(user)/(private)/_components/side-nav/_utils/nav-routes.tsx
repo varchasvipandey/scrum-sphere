@@ -13,13 +13,13 @@ export const getNavRoutes = (orgId: string) => {
     {
       type: "route",
       label: "Boards",
-      href: getOrgRoute(orgId, Routes.orgBoards),
+      href: getOrgRoute(orgId, Routes.OrgBoards),
       icon: <BoardIcon {...iconProps} />,
     },
     {
       type: "route",
       label: "Analytics",
-      href: getOrgRoute(orgId, Routes.orgAnalytics),
+      href: getOrgRoute(orgId, Routes.OrgAnalytics),
       icon: <AnalyticsIcon {...iconProps} />,
     },
     {
@@ -29,13 +29,13 @@ export const getNavRoutes = (orgId: string) => {
     {
       type: "route",
       label: "Settings",
-      href: getOrgRoute(orgId, Routes.orgSettings),
+      href: getOrgRoute(orgId, Routes.OrgSettings),
       icon: <SettingsIcon {...iconProps} />,
     },
     {
       type: "route",
       label: "Billing",
-      href: getOrgRoute(orgId, Routes.orgBilling),
+      href: getOrgRoute(orgId, Routes.OrgBilling),
       icon: <BillingIcon {...iconProps} />,
     },
   ];

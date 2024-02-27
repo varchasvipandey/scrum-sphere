@@ -13,9 +13,9 @@ export const AuthHeader = () => {
           </span>
           <OrganizationSwitcher
             hidePersonal
-            afterSelectOrganizationUrl={`${Routes.dashboard}/:id`}
-            afterCreateOrganizationUrl={`${Routes.dashboard}/:id`}
-            afterLeaveOrganizationUrl={Routes.selectOrg}
+            afterSelectOrganizationUrl={`${Routes.Dashboard}/:id`}
+            afterCreateOrganizationUrl={`${Routes.Dashboard}/:id`}
+            afterLeaveOrganizationUrl={Routes.SelectOrg}
           />
         </div>
         <UserButton afterSignOutUrl="/" />

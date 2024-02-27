@@ -3,15 +3,15 @@ import { Routes } from "./lib/routes";
 import { NextResponse } from "next/server";
 
 export default authMiddleware({
-  publicRoutes: [Routes.signIn],
+  publicRoutes: [Routes.SignIn],
   ignoredRoutes: ["/"],
 
   afterAuth(auth, req) {
     if (auth.userId && auth.isPublicRoute) {
       let path: string;
 
-      if (auth.orgId) path = `${Routes.dashboard}/${auth.orgId}`;
-      else path = Routes.selectOrg;
+      if (auth.orgId) path = `${Routes.Dashboard}/${auth.orgId}`;
+      else path = Routes.SelectOrg;
 
       const orgSelection = new URL(path, req.url);
       return NextResponse.redirect(orgSelection);

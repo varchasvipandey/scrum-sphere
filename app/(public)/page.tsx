@@ -18,7 +18,7 @@ export default function Home() {
 
       <div className="flex space-x-2">
         <Button asChild>
-          <Link href={Routes.signIn}>Get Started</Link>
+          <Link href={Routes.SignIn}>Get Started</Link>
         </Button>
       </div>
     </main>

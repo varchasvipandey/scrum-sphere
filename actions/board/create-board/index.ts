@@ -5,6 +5,8 @@ import { InputType, ReturnType } from "./types";
 import { db } from "@/lib/db";
 import { revalidatePath } from "next/cache";
 import { Routes, getBoardRoute, getOrgRoute } from "@/lib/routes";
+import { createSafeAction } from "@/lib/create-safe-action";
+import { CreatedBoard } from "./schema";
 
 const handler = async (data: InputType): Promise<ReturnType> => {
   const { userId, orgId } = auth();
@@ -38,4 +40,4 @@ const handler = async (data: InputType): Promise<ReturnType> => {
   };
 };
 
-export default handler;
+export const createBoard = createSafeAction(CreatedBoard, handler);

@@ -1,1 +1,1 @@
-export { default as createBoard } from "./create-board";
+export * from "./create-board";

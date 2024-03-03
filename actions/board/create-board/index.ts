@@ -13,15 +13,11 @@ const handler = async (data: InputType): Promise<ReturnType> => {
 
   if (!userId || !orgId) return { error: "Unauthorized" };
 
-  const { title } = data;
-
   let board;
 
   try {
     board = await db.board.create({
-      data: {
-        title,
-      },
+      data,
     });
   } catch (e) {
     return {

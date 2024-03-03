@@ -9,8 +9,9 @@ datasource db {
 }
 
 model Board {
-  id    String @id @default(cuid())
-  title String
+  id          String @id @default(cuid())
+  title       String
+  description String @default("")
 
   @@map("boards") // table name
 }

@@ -1,5 +1,5 @@
 import { ActionState, FieldErrors } from "@/lib/create-safe-action";
-import { useCallback, useReducer, useState } from "react";
+import { useCallback, useReducer } from "react";
 
 type Action<T_IN, T_OUT> = (data: T_IN) => Promise<ActionState<T_IN, T_OUT>>;
 
@@ -27,7 +27,7 @@ export const useAction = <T_IN, T_OUT>(action: Action<T_IN, T_OUT>, options: Opt
 
   const run = useCallback(
     async (input: T_IN) => {
-      setState({ isLoading: true });
+      setState({ isLoading: true, fieldErrors: undefined, error: undefined, data: undefined });
 
       try {
         const result = await action(input);

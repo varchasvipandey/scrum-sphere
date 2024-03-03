@@ -9,4 +9,7 @@ export const CreatedBoard = z.object({
     .min(3, {
       message: "Title must be 3 characters long",
     }),
+  description: z.string().max(60, {
+    message: "Description too long",
+  }),
 });
